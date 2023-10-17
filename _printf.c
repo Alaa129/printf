@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 	const char *set_num;
 	va_list args;
 
-	if (format == NULL)
+	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
 	{
 		va_end(args);
 		return (-1);
