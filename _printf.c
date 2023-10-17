@@ -64,7 +64,7 @@ int _printf(const char *format, ...)
 			current_num++;
 		}
 	}
-	
+
 	va_end(args);
 	return (counter);
 }
