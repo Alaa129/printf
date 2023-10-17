@@ -1,4 +1,14 @@
 #include "main.h"
+/**
+* custom_precent - This function prints a string.
+*
+* Return: Char.
+*/
+int custom_precent(void)
+{
+		_putchar('%');
+		return (1);
+}
 
 /**
 * custom_putchar - This function prints a string.
