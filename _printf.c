@@ -51,17 +51,17 @@ int _printf(const char *format, ...)
 
 	while (*current_num != '\0')
 	{
-		if (*current_num != '%')
-		{
-			_putchar(*current_num);
-			counter++;
-			current_num++;
-		}
-		else
+		if (*current_num == '%')
 		{
 			set_num = current_num + 1;
 			counter += switch_case(set_num, args);
 			current_num = current_num + 2;
+		}
+		else
+		{
+			_putchar(*current_num);
+			counter++;
+			current_num++;
 		}
 	}
 
