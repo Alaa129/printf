@@ -39,6 +39,7 @@ int _printf(const char *format, ...)
 	const char *set_num;
 	va_list args;
 
+	va_start(args, format);
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
@@ -46,8 +47,6 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 
-	va_start(args, format);
-	
 	current_num = format;
 
 	while (*current_num != '\0')
@@ -68,41 +67,4 @@ int _printf(const char *format, ...)
 
 	va_end(args);
 	return (counter);
-}
-
-int main(void)
-{
-    	int len;
-    	int len2;
-
-    	len = _printf("Let's try to printf a simple sentence.\n");
-    	len2 = printf("Let's try to printf a simple sentence.\n");
-    	_printf("Length:[%d, %i]\n", len, len);
-    	printf("Length:[%d, %i]\n", len2, len2);
-    	_printf("Negative:[%d]\n", -762534);
-    	printf("Negative:[%d]\n", -762534);
-    	_printf("Character:[%c]\n", 'H');
-    	printf("Character:[%c]\n", 'H');
-    	_printf("String:[%s]\n", "I am a string !");
-    	printf("String:[%s]\n", "I am a string !");
-    	len = _printf("Percent:[%%]\n");
-    	len2 = printf("Percent:[%%]\n");
-    	_printf("Len:[%d]\n", len);
-    	printf("Len:[%d]\n", len2);
-
-	len = _printf("%%");
-	len2 = printf("%%");
-	_printf("Length:[%d, %i]\n", len, len);
-	printf("Length:[%d, %i]\n", len2, len2);
-
-	len = _printf("Should print a single percent sign:%%\n");
-	len2 = printf("Should print a single percent sign:%%\n");
-	_printf("Length:[%d, %i]\n", len, len);
-	printf("Length:[%d, %i]\n", len2, len2);
-
-	len = _printf("%");
-	len2 = printf("%");
-	_printf("Length:[%d, %i]\n", len, len);
-	printf("Length:[%d, %i]\n", len2, len2);
-    return (0);
 }
