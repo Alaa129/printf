@@ -38,8 +38,7 @@ int _printf(const char *format, ...)
 	const char *current_num;
 	const char *set_num;
 	va_list args;
-	
-	va_start(args, format);
+
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
@@ -47,7 +46,8 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 
-
+	va_start(args, format);
+	
 	current_num = format;
 
 	while (*current_num != '\0')
