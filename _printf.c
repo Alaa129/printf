@@ -29,7 +29,6 @@ int switch_case(const char *format, va_list args)
 }
 /**
  * _printf - _printf
- * 
  * @format: args
  * Return: leng
 */
@@ -40,7 +39,7 @@ int _printf(const char *format, ...)
 	const char *set_num;
 	va_list args;
 
-	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
+	if (format == NULL || (format[1] == '\0' && format[0] == '%'))
 	{
 		va_end(args);
 		return (-1);
@@ -62,7 +61,7 @@ int _printf(const char *format, ...)
 		{
 			set_num = current_num + 1;
 			counter += switch_case(set_num, args);
-			current_num += 2;
+			current_num = current_num + 2;
 		}
 	}
 
