@@ -1,5 +1,10 @@
 #include "main.h"
 
+int custom_precent(void)
+{
+	_putchar('%');
+	return (1);
+}
 /**
 * switch_case - This function prints a string.
 * @format: A format.
@@ -21,7 +26,7 @@ int switch_case(const char *format, va_list args)
 			return (custom_int(args));
 		break;
 		case '%':
-			return (_putchar('%'));
+			return (custom_precent());
 		break;
 		default:
 			return (0);
