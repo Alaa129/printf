@@ -1,10 +1,5 @@
 #include "main.h"
 
-int custom_precent(void)
-{
-	_putchar('%');
-	return (1);
-}
 /**
 * switch_case - This function prints a string.
 * @format: A format.
