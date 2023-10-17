@@ -27,25 +27,31 @@ int custom_putchar(va_list args)
 /**
 * putchar_string - This function prints a string.
 *
-* @args: A va_list containing a string.
+* @argsssssssss: A va_list containing a string.
 *
 * Return: Char.
 */
-int putchar_string(va_list args)
+int putchar_string(va_list argsssssssss)
 {
-	int length = 0;
-	char *str = va_arg(args, char *);
+	int len = 0;
+	char *str = va_arg(argsssssssss, char *);
 
 	if (str == NULL)
 	{
 		str = "(null)";
-		return (length);
+		while (*str)
+		{
+			len++;
+			_putchar(*str);
+			str++;
+		}
+		return (len);
 	}
 	while (*str)
 	{
+		len++;
 		_putchar(*str);
-		length++;
 		str++;
 	}
-	return (length);
+	return (len);
 }
