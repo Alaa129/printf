@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 	const char *set_num;
 	va_list args;
 
-	if (format == NULL || (format[1] == '\0' && format[0] == '%'))
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		va_end(args);
 		return (-1);
